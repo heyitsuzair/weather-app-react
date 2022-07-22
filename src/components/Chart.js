@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Line } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
-export default function LineChart(props) {
-  // eslint-disable-next-line
-  const [userData, setUserData] = useState({
+export default function LineChart({ forecast }) {
+  const userData = {
     labels: ["", "", "", "", "", ""],
     datasets: [
       {
-        label: "Temperature",
-        data: [0, 53, 85, 45, 30, 53],
+        label: "",
+        data: [
+          `${forecast[0].hour[0].temp_c}`,
+          `${forecast[0].hour[1].temp_c}`,
+          `${forecast[0].hour[2].temp_c}`,
+          `${forecast[0].hour[3].temp_c}`,
+          `${forecast[0].hour[4].temp_c}`,
+          `${forecast[0].hour[5].temp_c}`,
+        ],
         fill: true,
         backgroundColor: "rgba(107, 157, 250, 0.15)",
         backgroundOpacity: 0.5,
@@ -21,7 +27,7 @@ export default function LineChart(props) {
         pointBackgroundColor: "#6b9dfa",
       },
     ],
-  });
+  };
   const options = {
     scales: {
       x: {
@@ -44,12 +50,16 @@ export default function LineChart(props) {
       tooltip: {
         boxPadding: 5,
       },
+      legend: {
+        display: false,
+      },
     },
   };
+
   return (
     <div className="temp-chart">
-      Temperature
-      {<Line data={userData} options={options} width={850} height={240} />}
+      1 Hour Forecast In °C
+      <Line data={userData} options={options} width={850} height={240} />
     </div>
   );
 }
