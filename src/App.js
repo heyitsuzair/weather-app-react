@@ -20,7 +20,6 @@ function App() {
     const url = `https://api.weatherapi.com/v1/forecast.json?key=cdac4295cfeb4d67979101632222207&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`;
     await axios.get(url).then(async (res) => {
       await setForecast(res.data.forecast.forecastday);
-      setLoading(false);
     });
   };
 
