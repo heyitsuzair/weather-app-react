@@ -16,8 +16,8 @@ function App() {
       setLoading(false);
     });
   };
-  const getForecast = async () => {
-    const url = `https://api.weatherapi.com/v1/forecast.json?key=cdac4295cfeb4d67979101632222207&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`;
+  const getForecast = async (latitudeIncome, longitudeIncome) => {
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=cdac4295cfeb4d67979101632222207&q=${latitudeIncome},${longitudeIncome}&days=3&aqi=no&alerts=no`;
     await axios.get(url).then(async (res) => {
       await setForecast(res.data.forecast.forecastday);
     });
@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     getLocation();
-    getForecast();
+    getForecast(latitude, longitude);
     //eslint-disable-next-line
   }, []);
 
