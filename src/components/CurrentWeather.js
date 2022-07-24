@@ -54,9 +54,9 @@ export default function CurrentWeather({ longitude, latitude }) {
     updateClock();
   }, []);
   // getting weather info
-  const getWeather = async () => {
+  const getWeather = async (longitudeIncome, latitudeIncome) => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=0585d63af5210e9a1f194fac36d7b816`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${longitudeIncome}&lon=${latitudeIncome}&appid=0585d63af5210e9a1f194fac36d7b816`;
       await axios.get(url).then((res) => {
         setWeather({
           temp: Math.ceil(res.data.main.temp - 273),
@@ -72,7 +72,7 @@ export default function CurrentWeather({ longitude, latitude }) {
     }
   };
   useEffect(() => {
-    getWeather();
+    getWeather(longitude, latitude);
     // eslint-disable-next-line
   }, []);
 
