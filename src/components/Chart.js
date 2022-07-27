@@ -9,12 +9,24 @@ export default function LineChart({ forecast }) {
       {
         label: "",
         data: [
-          `${forecast[0].hour === undefined ? "" : forecast[0].hour[0].temp_c}`,
-          `${forecast[0].hour === undefined ? "" : forecast[0].hour[1].temp_c}`,
-          `${forecast[0].hour === undefined ? "" : forecast[0].hour[2].temp_c}`,
-          `${forecast[0].hour === undefined ? "" : forecast[0].hour[3].temp_c}`,
-          `${forecast[0].hour === undefined ? "" : forecast[0].hour[4].temp_c}`,
-          `${forecast[0].hour === undefined ? "" : forecast[0].hour[5].temp_c}`,
+          `${
+            forecast[0].hour[0] === undefined ? "" : forecast[0].hour[0].temp_c
+          }`,
+          `${
+            forecast[0].hour[1] === undefined ? "" : forecast[0].hour[1].temp_c
+          }`,
+          `${
+            forecast[0].hour[2] === undefined ? "" : forecast[0].hour[2].temp_c
+          }`,
+          `${
+            forecast[0].hour[3] === undefined ? "" : forecast[0].hour[3].temp_c
+          }`,
+          `${
+            forecast[0].hour[4] === undefined ? "" : forecast[0].hour[4].temp_c
+          }`,
+          `${
+            forecast[0].hour[5] === undefined ? "" : forecast[0].hour[5].temp_c
+          }`,
         ],
         fill: true,
         backgroundColor: "rgba(107, 157, 250, 0.15)",
