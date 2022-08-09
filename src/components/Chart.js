@@ -3,31 +3,18 @@ import { Line } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 export default function LineChart({ forecast }) {
-  console.log(forecast.length);
   const userData = {
     labels: ["", "", "", "", "", ""],
     datasets: [
       {
         label: "",
         data: [
-          `${
-            forecast[0].hour[0] === undefined ? "" : forecast[0].hour[0].temp_c
-          }`,
-          `${
-            forecast[0].hour[1] === undefined ? "" : forecast[0].hour[1].temp_c
-          }`,
-          `${
-            forecast[0].hour[2] === undefined ? "" : forecast[0].hour[2].temp_c
-          }`,
-          `${
-            forecast[0].hour[3] === undefined ? "" : forecast[0].hour[3].temp_c
-          }`,
-          `${
-            forecast[0].hour[4] === undefined ? "" : forecast[0].hour[4].temp_c
-          }`,
-          `${
-            forecast[0].hour[5] === undefined ? "" : forecast[0].hour[5].temp_c
-          }`,
+          `${forecast.length === 0 ? "" : forecast[0].hour[0].temp_c}`,
+          `${forecast.length === 0 ? "" : forecast[0].hour[1].temp_c}`,
+          `${forecast.length === 0 ? "" : forecast[0].hour[2].temp_c}`,
+          `${forecast.length === 0 ? "" : forecast[0].hour[3].temp_c}`,
+          `${forecast.length === 0 ? "" : forecast[0].hour[4].temp_c}`,
+          `${forecast.length === 0 ? "" : forecast[0].hour[5].temp_c}`,
         ],
         fill: true,
         backgroundColor: "rgba(107, 157, 250, 0.15)",
