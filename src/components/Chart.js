@@ -70,7 +70,7 @@ export default function LineChart({ forecast }) {
 
   return (
     <>
-      {forecast[0].hour[5] === undefined ? (
+      {forecast[0].hour === undefined ? (
         <h1>Loading...</h1>
       ) : (
         <div className="temp-chart">
