@@ -69,9 +69,15 @@ export default function LineChart({ forecast }) {
   };
 
   return (
-    <div className="temp-chart">
-      1 Hour Forecast In °C
-      <Line data={userData} options={options} width={850} height={240} />
-    </div>
+    <>
+      {forecast[0].hour[5] === undefined ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className="temp-chart">
+          1 Hour Forecast In °C
+          <Line data={userData} options={options} width={850} height={240} />
+        </div>
+      )}
+    </>
   );
 }
