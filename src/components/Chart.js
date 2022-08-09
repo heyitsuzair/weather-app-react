@@ -3,7 +3,7 @@ import { Line } from "react-chartjs-2";
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 export default function LineChart({ forecast }) {
-  console.log(forecast);
+  console.log(forecast.length);
   const userData = {
     labels: ["", "", "", "", "", ""],
     datasets: [
@@ -71,7 +71,7 @@ export default function LineChart({ forecast }) {
 
   return (
     <>
-      {forecast[0].hour === undefined ? (
+      {forecast.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
         <div className="temp-chart">
