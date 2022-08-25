@@ -33,8 +33,8 @@ export default function CurrentWeather({ longitude, latitude }) {
 
     currentHour = currentHour > 12 ? currentHour - 12 : currentHour;
     currentHour = currentHour === 0 ? 12 : currentHour;
-    console.log(currentHour);
-    let timeOfDay = currentHour < 12 ? "AM" : "PM";
+
+    let timeOfDay = new Date().getHours() < 12 ? "AM" : "PM";
 
     setTime({
       hour: currentHour,
