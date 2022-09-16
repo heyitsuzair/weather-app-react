@@ -58,7 +58,6 @@ export default function CurrentWeather({ longitude, latitude }) {
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitudeIncome}&lon=${longitudeIncome}&appid=0585d63af5210e9a1f194fac36d7b816`;
       await axios.get(url).then((res) => {
-        console.log(res.data.main);
         setWeather({
           temp: Math.ceil(res.data.main.temp) - 273,
           main: res.data.weather[0].main,
