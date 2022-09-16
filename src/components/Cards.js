@@ -41,7 +41,7 @@ export default function Cards({ data }) {
         <h5 className="today">{daylist[today] === day ? "Today" : day}</h5>
         <img
           id="cloud-card"
-          src="//cdn.weatherapi.com/weather/64x64/day/302.png"
+          src={data.day.condition.icon}
           width={30}
           alt="TODO"
         />
