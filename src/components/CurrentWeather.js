@@ -55,6 +55,7 @@ export default function CurrentWeather({ longitude, latitude }) {
   }, []);
   // getting weather info
   const getWeather = async (longitudeIncome, latitudeIncome) => {
+    console.log(longitudeIncome, latitudeIncome);
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${longitudeIncome}&lon=${latitudeIncome}&appid=0585d63af5210e9a1f194fac36d7b816`;
       await axios.get(url).then((res) => {
